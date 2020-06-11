@@ -36,23 +36,23 @@ class HomePage extends StatelessWidget {
                 ),
                 child: MaterialButton(
                     child: Row(
-                  children: <Widget>[
-                    Icon(
-                      Icons.check,
-                      color: Colors.green,
-                    ),
-                    SizedBox(
-                      width: 12.0,
-                    ),
-                    Text(
-                      'Friends',
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        color: Colors.green,
-                      ),
-                    )
-                  ],
-                )),
+                      children: <Widget>[
+                        Icon(
+                          Icons.check,
+                          color: Colors.green,
+                        ),
+                        SizedBox(
+                          width: 12.0,
+                        ),
+                        Text(
+                          'Friends',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            color: Colors.green,
+                          ),
+                        )
+                      ],
+                    )),
               ),
             )
           ],
@@ -120,118 +120,118 @@ class HomePage extends StatelessWidget {
           color: Colors.white,
         ),
         child: CustomPaint(
-          painter: PointsPainter(),
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(32.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      '957',
-                      style: TextStyle(
-                        fontSize: 25.0,
-                        fontWeight: FontWeight.bold,
-                      ),
+            painter: PointsPainter(),
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(32.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          '957',
+                          style: TextStyle(
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'place',
+                          style: TextStyle(
+                            fontSize: 16.0,
+                            color: Color(0xffAEA1C1),
+                          ),
+                        )
+                      ],
                     ),
-                    Text(
-                      'place',
-                      style: TextStyle(
-                        fontSize: 16.0,
-                        color: Color(0xffAEA1C1),
-                      ),
-                    )
-                  ],
+                  ),
                 ),
-              ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(32.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      '8 500',
-                      style: TextStyle(
-                        fontSize: 25.0,
-                        fontWeight: FontWeight.bold,
-                      ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(32.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          '8 500',
+                          style: TextStyle(
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'points',
+                          style: TextStyle(
+                            fontSize: 16.0,
+                            color: Color(0xffAEA1C1),
+                          ),
+                        )
+                      ],
                     ),
-                    Text(
-                      'points',
-                      style: TextStyle(
-                        fontSize: 16.0,
-                        color: Color(0xffAEA1C1),
-                      ),
-                    )
-                  ],
-                ),
-              ),
+                  ),
+                )
+              ],
             )
-          ],
-        )
-    ),
+        ),
       ),
     );
   }
 
   Widget graphWidget() {
     return Expanded(
-    child:  Column(
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(left: 32.0, top: 26.0, right: 16.0),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              Text(
-                'Days',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(width: 16.0),
-              Text(
-                'Months',
-                style: TextStyle(color: Colors.white, fontSize: 20.0),
-              ),
-              Expanded(
-                child: Text(
-                  'visits in mins',
-                  textAlign: TextAlign.end,
-                  style: TextStyle(
-                    color: Colors.white.withOpacity(0.7),
-                    fontSize: 15.0,
+        child:  Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(left: 32.0, top: 26.0, right: 16.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: <Widget>[
+                  Text(
+                    'Days',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-              )
-            ],
-          ),
-        ),
-        SizedBox(height: 24.0),
-        Container(
-            width: double.infinity,
-            height: 200.0,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                dayItem('28.01', 55),
-                dayItem('30.01', 58),
-                dayItem('01.02', 45),
-                dayItem('04.02', 25),
-                dayItem('08.02', 55),
-                dayItem('11.02', 45),
-                dayItem('13.02', 60),
-                dayItem('28.01', 45),
-              ],
-            ))
-      ],
-    )
+                  SizedBox(width: 16.0),
+                  Text(
+                    'Months',
+                    style: TextStyle(color: Colors.white, fontSize: 20.0),
+                  ),
+                  Expanded(
+                    child: Text(
+                      'visits in mins',
+                      textAlign: TextAlign.end,
+                      style: TextStyle(
+                        color: Colors.white.withOpacity(0.7),
+                        fontSize: 15.0,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: 24.0),
+            Container(
+                width: double.infinity,
+                height: 200.0,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    dayItem('28.01', 55),
+                    dayItem('30.01', 58),
+                    dayItem('01.02', 45),
+                    dayItem('04.02', 25),
+                    dayItem('08.02', 55),
+                    dayItem('11.02', 45),
+                    dayItem('13.02', 60),
+                    dayItem('28.01', 45),
+                  ],
+                ))
+          ],
+        )
     );
   }
 
@@ -323,16 +323,16 @@ class PointsPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-      _paint.color = Colors.purpleAccent.withOpacity(0.15);
+    _paint.color = Colors.purpleAccent.withOpacity(0.15);
 
-      var path = Path();
-      path.moveTo(0, 0);
-      path.lineTo(size.width/2, 0);
-      path.lineTo(size.width/2 - 20.0, size.height);
-      path.lineTo(0, size.height);
-      path.close();
+    var path = Path();
+    path.moveTo(0, 0);
+    path.lineTo(size.width/2, 0);
+    path.lineTo(size.width/2 - 20.0, size.height);
+    path.lineTo(0, size.height);
+    path.close();
 
-      canvas.drawPath(path, _paint);
+    canvas.drawPath(path, _paint);
   }
 
   @override

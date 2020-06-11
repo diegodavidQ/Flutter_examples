@@ -181,7 +181,7 @@ class HomePage extends StatelessWidget {
 	<img src="screenshots/wheater.PNG" width="400">
 </p>
 
-**Repositorio:** [https://github.com/diegodavidQ/Flutter_examples/repository/weather.dart]
+**Repositorio:** [wheater](https://github.com/diegodavidQ/Flutter_examples/repository/weather.dart)
 
 ## Aplicación #2
 
@@ -291,7 +291,14 @@ Dentro de la clase instanciamos cada uno
   Widget FriendsWidget() => Container();
 ```
 
-Modifcaremos primero el Widget userWidget
+Modifcaremos los widgets.
+
+El documento final de esta interfaz lo podemos ver en:
+
+**Repositorio:** [User points](https://github.com/diegodavidQ/Flutter_examples/repository/user_points.dart)
+
+
+
 
 ```dart
 ```
