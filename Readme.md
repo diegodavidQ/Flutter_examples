@@ -178,10 +178,10 @@ class HomePage extends StatelessWidget {
 ```
 
 <p align="center">
-	<img src="screenshots/wheater.PNG" width="400">
+	<img src="screenshots/weather.PNG" width="400">
 </p>
 
-**Repositorio:** [wheater](https://github.com/diegodavidQ/Flutter_examples/repository/weather.dart)
+**Repositorio:** [weather](https://github.com/diegodavidQ/Flutter_examples/repository/weather.dart)
 
 ## Aplicación #2
 
@@ -294,7 +294,7 @@ Dentro de la clase instanciamos cada uno
 Modifcaremos los widgets.
 
 <p align="center">
-	<img src="screenshots/user_points.jpeg" width="400">
+	<img src="screenshots/user_points.jpg" width="400">
 </p>
 
 El documento final de esta interfaz lo podemos ver en:
