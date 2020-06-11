@@ -293,6 +293,10 @@ Dentro de la clase instanciamos cada uno
 
 Modifcaremos los widgets.
 
+<p align="center">
+	<img src="screenshots/user_points.jpeg" width="400">
+</p>
+
 El documento final de esta interfaz lo podemos ver en:
 
 **Repositorio:** [User points](https://github.com/diegodavidQ/Flutter_examples/repository/user_points.dart)
