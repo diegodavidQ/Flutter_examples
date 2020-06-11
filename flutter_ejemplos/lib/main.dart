@@ -2,113 +2,263 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+const backgroundColor = Color(0xff5E37DB);
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData.dark(),
-      home: Container(
-        child: Scaffold(
-          appBar: AppBar(
-            title: Row(
-              mainAxisSize: MainAxisSize.min, //centrado
-              children: <Widget>[
-                Icon(Icons.wb_cloudy),
-                SizedBox(width: 8.0),
-                Text("Mi aplicación"),
-              ],
-            ),
-          ),
-          body: HomePage(),
-        )
-      )
+      home: HomePage(),
     );
   }
 }
 
-
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        header(),
-        list(),
-      ],
-    );
-  }
-
-
-  Widget header(){
-    return Stack(
-      children: <Widget>[
-        Container(
-            height: 100.0,
-            width: double.infinity, //all width
-            child: Image.network('https://static1.squarespace.com/static/59a706d4f5e2319b70240ef9/t/5a7a3f018165f5e5566ca3e6/1517961006265/AdobeStock_54132491.jpeg',
-            fit: BoxFit.cover,
-            )
-        ),
-        Container(
-          height: 100.0,
-          width: double.infinity,
-          color: Colors.black38,
-        ),
-        Positioned(
-            left: 16.0,
-            top: 16.0,
-            child: Text(
-                'Diego David',
-            style: TextStyle(
-                fontSize: 30.0,
-              fontWeight: FontWeight.bold,
-            ),
-            )
-        ),
-        Positioned(
-          right: 8.0,
-          bottom: 8.0,
-          child: Text('29C',
-            style: TextStyle(
-              fontSize: 30.0,
-              fontWeight: FontWeight.bold,
-            ),
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0.0,
+          leading: Row(
+            children: <Widget>[
+              SizedBox(width: 32.0),
+              Icon(Icons.arrow_back_ios),
+            ],
           ),
-        )
-      ],
-    );
+          actions: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30.0),
+                  color: Colors.green.withOpacity(0.3),
+                ),
+                child: MaterialButton(
+                    child: Row(
+                  children: <Widget>[
+                    Icon(
+                      Icons.check,
+                      color: Colors.green,
+                    ),
+                    SizedBox(
+                      width: 12.0,
+                    ),
+                    Text(
+                      'Friends',
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        color: Colors.green,
+                      ),
+                    )
+                  ],
+                )),
+              ),
+            )
+          ],
+        ),
+        backgroundColor: backgroundColor,
+        body: Column(
+          children: <Widget>[
+            userWidget(),
+            pointsWidget(),
+            graphWidget(),
+            FriendsWidget(),
+          ],
+        ));
   }
 
-  Widget list(){
+  Widget userWidget() {
     return Padding(
-      padding: const EdgeInsets.all(28.0),
-      child: Column(
+      padding: const EdgeInsets.only(left: 25.0, top: 24.0),
+      child: Row(
         children: <Widget>[
-          dayWidget('Lunes', Icons.wb_sunny, '29C'),
-          dayWidget('Martes', Icons.wb_cloudy, '20C'),
-          dayWidget('Miércoles', Icons.wb_cloudy, '18C'),
-          dayWidget('Jueves', Icons.wb_sunny, '28C'),
-          dayWidget('Viernes', Icons.wb_cloudy, '21C'),
-          dayWidget('Sábado', Icons.wb_sunny, '27C'),
-          dayWidget('Domingo', Icons.wb_sunny, '28C'),
+          Container(
+              width: 75.0,
+              height: 75.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.0),
+                image: DecorationImage(
+                  image: AssetImage('assets/avatar2.png'),
+                ),
+              )),
+          SizedBox(width: 20.0),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                'Diego',
+                style: TextStyle(
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'David',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.white,
+                ),
+              )
+            ],
+          )
         ],
       ),
     );
   }
 
-  Widget dayWidget(String day, IconData iconData, String temp){
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(28.0),
+  Widget pointsWidget() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 32.0, top: 24.0, right: 16.0),
+      child: Container(
+        width: double.infinity,
+        height: 120.0,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20.0),
+          color: Colors.white,
+        ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Text(day),
-            Icon(iconData),
-            Text(temp)
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(32.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      '957',
+                      style: TextStyle(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      'place',
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        color: Color(0xffAEA1C1),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(32.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      '8 500',
+                      style: TextStyle(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      'points',
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        color: Color(0xffAEA1C1),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            )
           ],
         ),
-      )
+      ),
     );
   }
+
+  Widget graphWidget() {
+    return Column(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.only(left: 32.0, top: 24.0, right: 16.0),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              Text('Days',
+              style: TextStyle(
+                color: Colors.white,
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              ),
+              ),
+              SizedBox(width: 16.0),
+              Text('Months',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0
+                ),
+              ),
+              Expanded(
+                child: Text('visits in mins',
+                  textAlign: TextAlign.end,
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.7),
+                    fontSize: 15.0,
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+        SizedBox(height: 24.0),
+        Container(
+          width: double.infinity,
+          height: 200.0,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              dayItem('28.01',55),
+              dayItem('30.01',58),
+              dayItem('01.02',45),
+              dayItem('04.02',25),
+              dayItem('08.02',55),
+              dayItem('11.02',45),
+              dayItem('13.02',60),
+              dayItem('28.01',45),
+            ],
+          )
+        )
+      ],
+    );
+  }
+
+  Widget dayItem(String day, int value){
+    var barHeight = 200.0 * value /100.0;
+    var offSet = 200.0 - barHeight - 60.0;
+
+    return Column(
+      children: <Widget>[
+        SizedBox(height: offSet),
+        Text(value.toString(),
+          style: TextStyle(
+            color: Colors.greenAccent,
+          ),
+        ),
+        SizedBox(height: 12.0),
+        Container(
+          width: 2.0,
+          height: barHeight,
+          color: Colors.greenAccent,
+        ),
+        SizedBox(height: 12.0),
+        Text(day,
+          style: TextStyle(
+            color: Colors.white.withOpacity(0.5),
+          ),
+        )
+      ],
+    );
+
+  }
+
+  Widget FriendsWidget() => Container();
 }

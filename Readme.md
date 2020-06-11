@@ -177,27 +177,121 @@ class HomePage extends StatelessWidget {
 
 ```
 
+<p align="center">
+	<img src="screenshots/wheater.PNG" width="400">
+</p>
+
 **Repositorio:** [https://github.com/diegodavidQ/Flutter_examples/repository/weather.dart]
 
 ## Aplicación #2
 
+Inicamos colocando un color de fondo a la aplicación.
 
+```dart
+const backgroundColor = Color(0xff5E37DB);
+
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: backgroundColor,
+      body: Container(
+                  
+      )
+    );
+  }
+}
+
+```
+
+En el archivo `pubspec.yaml` configuramos en `assets` los archivos que estan dentro de nuestra aplicación.
+
+En esta ocasión colocamos una imagen de un avatar. Creamos un directorio llamado `assets` y dentro de este colocamos las imagenes que usaremos.
 
 
 ```dart
+assets:
+    - assets/avatar1.png
+    - assets/avatar2.png
 ```
 
-```dart
-```
+### AppBar
 
 ```dart
+appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        leading: Row(
+          children: <Widget>[
+            SizedBox(width: 32.0),
+            Icon(Icons.arrow_back_ios),
+          ],
+        ),
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30.0),
+                color: Colors.green.withOpacity(0.3),
+              ),
+              child: MaterialButton(
+                child: Row(
+                  children: <Widget>[
+                    Icon(Icons.check,
+                    color: Colors.green,
+                    ),
+                    SizedBox(width: 12.0,),
+                    Text('Friends',
+                    style: TextStyle(
+                      fontSize: 15.0,
+                      color: Colors.green,
+                    ),)
+                  ],
+                )
+              ),
+            ),
+          )
+        ],
+      ),
 ```
 
-```dart
-```
+### Body
+
+Para el body crearemos los Widgets:
 
 ```dart
+ body: Column(
+          children: <Widget>[
+            userWidget(),
+            pointsWidget(),
+            graphWidget(),
+            FriendsWidget(),
+          ],
+        )
 ```
+
+Dentro de la clase instanciamos cada uno
+
+
+```dart
+  Widget userWidget() => Container();
+  Widget pointsWidget() => Container();
+  Widget graphWidget() => Container();
+  Widget FriendsWidget() => Container();
+```
+
+Modifcaremos primero el Widget userWidget
 
 ```dart
 ```
